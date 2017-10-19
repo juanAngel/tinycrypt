@@ -100,6 +100,18 @@ int default_CSPRNG(uint8_t *dest, unsigned int size) {
   close(fd);
   return 1;
 }
+#elif defined(__XC32)
+
+#include <stdlib.h>
+#include <stdint.h>
+#include <stddef.h>
+
+#include <system/random/sys_random.h>
+
+int default_CSPRNG(uint8_t *dest, unsigned int size){
+    SYS_RANDOM_CryptoBlockGet(dest,size);
+    return 1;
+}
 
 #endif /* platform */
 
