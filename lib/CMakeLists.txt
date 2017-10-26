@@ -7,4 +7,8 @@ file(GLOB_RECURSE src
  add_library(${PROJECT_NAME} ${src})
  
  target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_LIST_DIR}/include)
- target_link_libraries(${PROJECT_NAME}  Rexlab_os_crypto)
+ 
+if(MICROCHIP_MCU)
+    target_link_libraries(${PROJECT_NAME}  Rexlab_os_crypto)
+endif()
+    

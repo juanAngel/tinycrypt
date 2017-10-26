@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 project(tinycrypt) 
 
-option(ENABLE_TESTING "activa la generacion de test" ON)
+option(ENABLE_TESTING "activa la generacion de test" OFF)
 
 include(lib/CMakeLists.txt)
 

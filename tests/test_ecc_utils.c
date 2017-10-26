@@ -67,6 +67,8 @@
 #include <stdbool.h>
 #include <unistd.h>
 
+#include <tinycrypt/ecc_dh.h>
+
 int hex2int (char hex)
 {
 	uint8_t dec;
